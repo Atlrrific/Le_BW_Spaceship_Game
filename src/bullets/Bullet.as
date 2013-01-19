@@ -16,10 +16,10 @@ package bullets
 			this.x = x;
 			this.y = y;
 			
-			this.setHitbox(2, 2, 0, 0);
+			this.setHitbox(4, 4, 0, 0);
 			
 			//Heigth, Width, transparency and color, for the Bitmap data because there is no image.
-			this.graphic = new Image(new BitmapData(2, 2, false, 0xfffffff));
+			this.graphic = new Image(new BitmapData(4, 4, false, 0xfffffff));
 		}
 		
 		override public function update():void 

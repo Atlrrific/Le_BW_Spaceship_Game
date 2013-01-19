@@ -16,12 +16,18 @@ package players
 	{
 		//Variable to import the Whitebullet class
 		protected var currentBullet:Class;
+		private var player_Image:Image;
 		public function Player(x:int, y:int) 
 		{
 			super (x, y);
 			
-			graphic = new Image(GC.GFX_PLAYER);
-			setHitbox(32, 32, 0, 0);
+			//Add the Iamge to the Variable
+			player_Image = new Image(GC.GFX_PLAYER);
+			//Magnify the image by two
+			player_Image.scale = 2;
+			
+			graphic = player_Image;//new Image(GC.GFX_PLAYER);
+			setHitbox(62, 64, 0, 0);
 			
 			//Set up the currentBullet variable to the WhiteBullet class.
 			currentBullet = WhiteBullet;
@@ -31,7 +37,7 @@ package players
 		{
 			super.update();
 			
-			x = Input.mouseX - width / 2;
+			x = Input.mouseX - width - 2;
 			
 			//To dont go out of the screen
 			if (x < 0) x = 0;
@@ -43,7 +49,7 @@ package players
 				//Spawn our Bullet, it uses the currentBullet class
 				this.world.add(new currentBullet(x + 1, y +16));
 				
-				this.world.add(new currentBullet(x+29, y +16));
+				this.world.add(new currentBullet(x+59, y +16));
 			}
 			
 			if (Input.pressed(Key.Z))

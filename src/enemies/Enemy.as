@@ -13,15 +13,20 @@ package enemies
 	 */
 	public class Enemy extends Entity 
 	{
-		
+		private var enemy_Image:Image;
 		public function Enemy() 
 		{
 			
-			super(FP.rand(FP.screen.width - 10), y);
+			super(FP.rand(FP.screen.width - 20), y);
 			
-			this.graphic = new Image(GC.GFX_ENEMY);
+			//Add the image to the Variable
+			enemy_Image = new Image(GC.GFX_ENEMY)
+			//Magnify it by two
+			enemy_Image.scale = 2;
 			
-			this.setHitbox(12, 13,-2,-1);
+			this.graphic = enemy_Image;
+			
+			this.setHitbox(25, 28,-3,-2);
 			
 			this.type = GC.TYPE_ENEMY;
 		}

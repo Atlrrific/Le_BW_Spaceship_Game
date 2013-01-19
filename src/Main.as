@@ -15,12 +15,16 @@ package
 		public function Main():void 
 		{
 			//The size of the screen
-			super(160, 300);
+			//super(160, 300);
 			
-			FP.screen.scale = 2;
+			super(320, 600);
+			//FP.screen.scale = 2;
+			
 			
 			FP.screen.color = 0x888888;
 			
+			
+			//To Enable and disable the console
 			//FP.console.enable();
 			
 			
@@ -29,7 +33,8 @@ package
 		
 		override public function init():void
 		{
-			FP.world = new GameWorld();
+			//Do first the Title World to continue
+			FP.world = new TitleWorld();
 			
 			
 			

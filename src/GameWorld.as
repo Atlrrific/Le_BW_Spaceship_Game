@@ -34,7 +34,7 @@ package
 			scoreText = new Text("0");
 			addGraphic(scoreText);
 			
-			player = new Player(FP.screen.width/2 -6,250);
+			player = new Player(FP.screen.width/2 -6,525);
 			//player.x = FP.screen.width/2 -6;
 		//	player.y = 250;
 			
@@ -59,7 +59,7 @@ package
 			{
 				
 			
-			if ( (this.typeCount(GC.TYPE_ENEMY) == 0 || FP.random > GC.ENEMY_SPAWN_CHANCE))
+			if ((this.typeCount(GC.TYPE_ENEMY) == 0 || FP.random > GC.ENEMY_SPAWN_CHANCE))
 			{
 				if (FP.rand(2) == 0) add(new WhiteEnemy());
 				else add(new BlackEnemy());
@@ -99,9 +99,10 @@ package
 		
 		public function createPlayer ():void
 		{
-			player = new Player(FP.screen.width/2 -6,250);
+			
+			player = new Player(FP.screen.width/2 -6,525);
 				//	player.x = ;
-				//	player.y = 250;
+				//player.y = 550;
 			this.add(player);
 		}
 	}
