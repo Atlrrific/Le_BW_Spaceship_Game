@@ -12,9 +12,9 @@ package
 		
 		[Embed(source="../assets/Enemy.png")]
 		public static const GFX_ENEMY:Class;
-		public static const ENEMY_SPEED:Number = 80;
+		public static var ENEMY_SPEED:Number = 80;
 		public static const TYPE_ENEMY:String = "enemy";
-		public static const ENEMY_SPAWN_CHANCE:Number = 0.99;
+		public static var ENEMY_SPAWN_CHANCE:Number = 0.99;
 		public static const ENEMY_VALUE:Number = 100;
 		
 

@@ -1,9 +1,11 @@
 package bullets 
 {
+	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Image;
+	
 	/**
 	 * ...
 	 * @author Atl Arredondo
@@ -20,6 +22,9 @@ package bullets
 			
 			//Heigth, Width, transparency and color, for the Bitmap data because there is no image.
 			this.graphic = new Image(new BitmapData(4, 4, false, 0xfffffff));
+			
+			
+			
 		}
 		
 		override public function update():void 
@@ -38,7 +43,7 @@ package bullets
 		{
 			super.removed();
 			
-			trace("See ya ");
+			
 		}
 		
 	}

@@ -20,6 +20,7 @@ package
 		protected var topTitle:Entity;
 		protected var bottomTitle:Entity;
 		protected var hasPlayedTitle:Boolean;
+		protected var hasPlayedTitleOut:Boolean;
 		protected var infoText:Text;
 		public function TitleWorld() 
 		{
@@ -81,6 +82,11 @@ package
 			hasPlayedTitle = true;
 		}
 		
+		protected function onTextFadeOut():void
+		{
+			hasPlayedTitleOut = true;
+		}
+		
 		//Update Function to the Game
 		
 		override public function update():void 
@@ -89,9 +95,25 @@ package
 			
 			if (Input.mousePressed && hasPlayedTitle)
 			{
-				//Handle continious for going to the next world
-				FP.world = new GameWorld();
+				infoText.visible = false;
+				hasPlayedTitle = false;
+				//Create Tweens
+				var topTweenOut:VarTween = new VarTween();
+				//What to Tween (Object,properties,from,to,ease)
+				topTweenOut.tween(topTitle, "y", -FP.screen.height/2, 0.5)
+				addTween(topTweenOut, true);
+			
+				var bottomTweenOut:VarTween = new VarTween(onTextFadeOut);
+				//What to Tween (Object,properties,from,to,ease)
+				bottomTweenOut.tween(bottomTitle, "y", FP.screen.height, 0.5);
+				addTween(bottomTweenOut, true);
+				
+				//hasPlayedTitle = true;
+				
+				
 			}
+			//Handle continious for going to the next world
+			if(hasPlayedTitleOut)FP.world = new GameWorld();
 		}
 		
 	}

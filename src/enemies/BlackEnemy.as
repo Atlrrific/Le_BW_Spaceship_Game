@@ -10,10 +10,13 @@ package enemies
 	public class BlackEnemy extends Enemy 
 	{
 		
+		
 		public function BlackEnemy() 
 		{
+			//enemy_Image1 = new Image(this.addGraphic(enemy_Image));
+			
 			super();
-			Image(this.graphic).color = 0;
+			Image(enemy_Image).color = 0;
 			
 		}
 		
@@ -22,8 +25,15 @@ package enemies
 			super.hit(b);
 			if (b.type == GC.TYPE_WHITE_BULLET)
 			{
-				this.world.remove(this);
-				this.getScore();
+				
+				
+				
+					//trace("REmove ENEMY");
+					//this.world.remove(this);
+					
+					this.getScore();
+				
+				
 			}
 		}
 		
